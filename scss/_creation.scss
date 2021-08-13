@@ -1,0 +1,128 @@
+.creations {
+  padding:4rem 7rem;
+  margin-bottom: 2rem;
+  display: grid;
+  grid-template-areas: 
+    "headerTitle headerAction"
+    "gallery gallery";
+  grid-gap: 3rem;
+  // margin-top: 3rem;
+  font-family: 'Alata', sans-serif;
+
+  &__header {
+    &__title {
+      font-size: 2.5rem;
+      // font-family: $font-main;
+      text-transform: uppercase;
+      font-weight: normal;
+      grid-area: headerTitle;
+
+      @media screen and (max-width: 799px) {
+        text-align: center;
+      }
+    }
+
+    &__action {      
+      grid-area: headerAction;
+      text-align: right;
+
+      &__link {
+        padding: 0.5rem 3rem;
+        border: 2px solid $VeryDarkGray;
+        text-transform: uppercase;
+        letter-spacing: .2rem;
+        transition: background .2s ease-in-out;
+        grid-area: headerAction;
+
+        &:hover {
+          color: $White;
+          background: $Black;
+          border: 2px solid $Black;
+        }
+      }
+
+      @media screen and (max-width: 799px) {
+        text-align: center;
+      }
+    }
+  }
+
+  &__items {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);    
+    grid-gap: 1.75rem;
+    grid-area: gallery;
+
+    &__card {
+      position: relative;
+      width: 100%;
+      cursor: pointer;
+      transition: all .3s ease-in-out;
+      overflow: hidden;
+
+      img {        
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: all .3s ease-in-out;
+      }
+
+      &__title {
+        position: absolute;
+        left: 2rem;
+        bottom: 2rem;
+        font-size: 2rem;
+        // font-family: $font-main;
+        text-transform: uppercase;
+        font-weight: normal;
+        color: $White;
+        z-index: 1;
+        transition: all .3s ease-in-out;
+
+        @media screen and (max-width: 799px) {
+          font-size: 1.25rem;
+        }
+      }
+
+      &::after {
+        position: absolute;
+        content: ' ';
+        background: rgba(0,0,0,0.3);
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        z-index: 0;
+      }
+
+      &:hover {
+        .creations__items__card__title {
+          top: 0;          
+          transform: scale(125%) translateY(50%);          
+        }
+
+        img {
+          transform: scale(125%); 
+        }
+        
+        &::after {
+          background: $Black;
+        }        
+      }
+    }
+
+    @media screen and (max-width: 799px) {
+      grid-template-columns: 1fr; 
+    }
+  }
+
+  @media screen and (max-width: 799px) {
+    padding-left: 2rem;
+    padding-right: 2rem;
+    grid-template-areas: 
+    "headerTitle"
+    "gallery"
+    "headerAction";
+  }  
+}

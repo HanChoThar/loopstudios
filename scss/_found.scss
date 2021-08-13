@@ -1,0 +1,51 @@
+.found{
+  padding: 4rem 3rem;
+  display: flex;
+  flex-direction: column;
+  @media (min-width: 900px) {
+    flex-direction: row;
+    position: relative;
+    padding: 7rem;
+  }
+  
+  &_photo{
+    width: 340px;
+    margin-left: 50%;
+    transform: translateX(-50%);
+    @media (min-width: 900px) {
+      margin: 0;
+      transform: none;
+      width: 70%;
+    }
+  }
+
+  &_text{
+    text-align: center;
+    font-family: 'Alata', sans-serif;
+    @media (min-width: 900px) {
+      position: absolute;
+      width: 35%;
+      background-color: $White;
+      padding: 2rem;
+      // left: 10%;
+      bottom: 0%;
+      right: 10%;
+      text-align: start;
+    }
+    div{
+      font-size: 2rem;
+      margin-top: 2rem;
+      margin-bottom: 1rem;
+      font-weight: 400;
+      text-transform: uppercase;
+      color: $Black;
+      @media (min-width: 900px) {
+        margin: 0;
+      }
+    }
+    p{
+      color: $VeryDarkGray;
+    }
+  }
+
+}

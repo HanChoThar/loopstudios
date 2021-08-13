@@ -1,0 +1,129 @@
+.hero{
+  background-color: violet;
+  height: 90vh;
+  background-image: url('https://cdn.pixabay.com/photo/2016/11/22/19/15/hand-1850120_960_720.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  // background-attachment: fixed;
+  @media (max-width: 540px){
+    height: 100vh;
+  }
+  .navbar{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 3rem;
+
+    @media (max-width: 900px) {
+      justify-content: space-between;
+      padding: 2rem;
+    }
+
+    &_burger btn{
+      z-index: 9999;
+    }
+
+    &_burger .close{
+      display: none;
+    }
+
+    &_links a{
+      color: $White;
+      margin-right: 20px;
+      font-family: 'Josefin Sans', sans-serif;
+      // font-weight: 900;
+    }
+
+    &_links a:not(nth-child(5)){
+      margin-right: 1rem;
+    }
+  }
+  
+
+
+  &_mobo{
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    // margin-left: 1rem;
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    background-color: black;
+    z-index: 9999;
+    top: 0;
+    left: 0;
+
+    &_head{
+      width: 100%;
+      // justify-content: space-between;
+      position: absolute;
+      top:0;
+      left: 0;
+      padding: 2rem;
+      // flex-direction: row;
+
+      // svg{
+      //   float: right;
+      //   right: 2rem;
+      // }
+    }
+
+    &_links{
+      margin-left: 2rem;
+    }
+
+    a{
+      font-weight: normal;
+      color: $White;
+      display: block;
+      margin-bottom: 1rem;
+      font-size: 2rem;
+      cursor: pointer;
+      font-family: 'Alata', sans-serif;
+    }
+  }
+
+  &_text{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 4rem;
+    margin-left: 15%;
+    width: 40%;
+
+    @media (max-width: 540px){
+      margin-top: 50%;
+      margin-left: 50%;
+      transform: translateX(-50%);
+    }
+
+    h1{
+      font-family: 'Alata', sans-serif;
+      font-size: 3rem;
+      border: 3px solid $White;
+      letter-spacing: 8px;
+      font-weight: 400;
+      text-transform: uppercase;
+      color: $White;
+      padding: 1rem;
+
+      @media (max-width: 540px){
+        font-size: 2rem;
+      }
+    }
+  }
+}
+
+@media (max-width: 899px){
+  .navbar_links{
+    display: none;
+  }
+  
+}
+
+@media (min-width: 900px){
+  .navbar_burger{
+    display: none;
+  }
+}
